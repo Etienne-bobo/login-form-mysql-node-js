@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Register</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        body{
+            background-color: darkslategray;
+        }
+        .container h2{
+           
+            text-align: center;
+            font-style: italic;
+        }
+        .container{
+            display: none;
+            margin-top: 150px;
+            width: 500px;
+            height: 400px;
+            background-color: #FFF;
+            border-radius: 10px;
+            box-shadow: 4px 4px 4px 4px;
+        }
+
+        /* loader */
+        .loader {
+            
+            margin:250px auto ;
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid blue;
+            border-right: 16px solid green;
+            border-bottom: 16px solid red;
+            width: 120px;
+            height: 120px;
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
+        }
+
+        @-webkit-keyframes spin {
+            0% { -webkit-transform: rotate(0deg); }
+            100% { -webkit-transform: rotate(360deg); }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .loader p{
+            color: white;
+            font-size: 80px;
+        }
+                
+    </style>
+</head>
+<body>
+    <div class="loader">
+        
+    </div>
+    <div class="container">
+        <h2>Register form</h2>
+        <form action="/signup" method="POST">
+          <div class="form-group">
+            <label for="username">username:</label>
+            <input type="text" class="form-control" id="username" placeholder="Enter username" name="username" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" class="form-control" id="password" placeholder="Enter password" name="password" required>
+          </div>
+          <!-- <div class="form-group form-check">
+            <label class="form-check-label">
+              <input class="form-check-input" type="checkbox" name="remember"> Remember me
+            </label>
+          </div> -->
+          <button type="submit" class="btn btn-primary">Submit</button><br>
+        </form> 
+        <div >
+            <p>Have Already an account? <a href="/login">Login</a></p>
+        </div>
+      </div>
+    
+</body>
+<script>
+    $(document).ready(function(){
+        $('.loader').fadeOut(3000,function(){
+            $('.container').fadeIn(1000);
+        });
+       
+
+    });
+</script>
+
+</html>
